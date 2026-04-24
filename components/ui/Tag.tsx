@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-type TagColor = "amethyst" | "lilac" | "rose" | "gold" | "peridot" | "neutral";
+export type TagColor = "amethyst" | "lilac" | "rose" | "gold" | "peridot" | "neutral";
 type TagSize  = "sm" | "md";
 
 interface TagProps {
