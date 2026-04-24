@@ -173,7 +173,7 @@ export const semantic = {
 
     // Typefaces — the Neo character trio
     font: {
-      display: "'Silk Serif', Georgia, serif",
+      display: "'Roboto Serif', Georgia, serif",
         // → Hero headlines, wordmark, editorial pull quotes
         // → Personality font: elegant, literary, unexpected
       body:    "'Satoshi', system-ui, sans-serif",

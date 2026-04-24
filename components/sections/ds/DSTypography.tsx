@@ -16,7 +16,7 @@ const scaleGroups: { label: string; keys: ScaleKey[] }[] = [
 ];
 
 const fontNames: Record<string, string> = {
-  display: "Silk Serif",
+  display: "Roboto Serif",
   body:    "Satoshi",
   mono:    "Azeret Mono",
 };

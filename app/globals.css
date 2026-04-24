@@ -3,6 +3,7 @@
    Satoshi + Azeret Mono via CDN; Silk Serif loaded locally when available
 ───────────────────────────────────────────────────────────── */
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&f[]=azeret-mono@400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 
 @import "tailwindcss";
 
@@ -12,7 +13,7 @@
 ───────────────────────────────────────────────────────────── */
 @theme {
   /* Fonts */
-  --font-display: 'Silk Serif', Georgia, serif;
+  --font-display: 'Roboto Serif', Georgia, serif;
   --font-body:    'Satoshi', system-ui, sans-serif;
   --font-mono:    'Azeret Mono', 'Courier New', monospace;
 
