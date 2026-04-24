@@ -1,0 +1,70 @@
+---
+title: Neo Design System
+description: A 3-tier token architecture — primitives, semantics, and components — built to give a bold, minimalistic portfolio both design consistency and engineering rigour.
+year: 2024
+role: Lead Designer & Architect
+timeline: 8 weeks
+tags: [Design Systems, Tokens, React]
+featured: true
+---
+
+## The Problem
+
+Every design system I'd worked with before had the same failure mode: tokens named after their appearance, not their intent. `grey-200` everywhere. Developers copy-pasting hex values. Dark mode bolted on after the fact.
+
+This time, starting from a blank canvas, I wanted to get the architecture right from the beginning.
+
+<Callout type="insight">
+  The core question wasn't "what colours do we need?" — it was "how do decisions travel from a designer's intention to a shipped component without losing meaning?"
+</Callout>
+
+## The Architecture
+
+The system runs on three tiers:
+
+1. **Primitives** — raw values with no opinion. `amethyst-500: #5835B0`. Nothing knows this exists except the next tier.
+2. **Semantics** — values named by intent. `accent.default`, `text.secondary`, `bg.surface`. Components only consume these.
+3. **Components** — scoped overrides when a component genuinely needs to diverge.
+
+This means redesigning a colour takes one edit at the primitive tier. Dark mode is a semantic-level concern — swap the resolved values, components don't change.
+
+<StatRow>
+  <Stat value="3"   label="Token tiers"       sublabel="primitive → semantic → component" />
+  <Stat value="50+" label="Semantic tokens"    sublabel="colour, type, space, motion" />
+  <Stat value="0"   label="Hardcoded values"   sublabel="in components" />
+</StatRow>
+
+## Typography
+
+The system uses three typefaces, each with a defined role:
+
+- **Roboto Serif** — display headlines, wordmark, editorial pull quotes. Elegant, literary, unexpected at large sizes.
+- **Satoshi** — all UI text, body copy, labels, nav. Geometric, clean, highly legible.
+- **Azeret Mono** — code, metadata, timestamps, index numbers. Signals precision and craft.
+
+Scale is fluid: every size uses `clamp()` so the type adapts to viewport without breakpoints. Named roles — `displayXl`, `headingMd`, `labelSm` — travel with intent rather than describing pixels.
+
+<Callout type="quote">
+  "Named roles beat size numbers every time. `headingLg` tells you what the text is doing. `24px` tells you nothing."
+</Callout>
+
+## Motion
+
+Interactions are defined as a named vocabulary, not arbitrary numbers:
+
+- `default` easing — for elements entering and exiting
+- `spring` easing — used sparingly for delight moments
+- `snappy` — immediate UI feedback, hover states
+- Duration scale from `micro` (100ms) to `cinematic` (1200ms)
+
+Every animated element in the portfolio draws from this vocabulary. Consistency comes for free.
+
+## What I Learned
+
+Getting the naming right took three iterations. The first draft used structural names (`tier-1`, `tier-2`). The second used roles but not consistently. The third — what shipped — names every token by the decision it represents, not the layer it lives in.
+
+The result: anyone coming into the codebase can read `color: var(--text-secondary)` and immediately understand the intent, without opening a Figma file.
+
+---
+
+Building your own design system is one of the best ways to develop genuine opinions about what makes systems scale. Every decision becomes visible.
