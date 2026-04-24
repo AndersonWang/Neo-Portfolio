@@ -1,8 +1,8 @@
 "use client";
 
 const socials = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/andersonwang" },
-  { label: "Dribbble", href: "https://dribbble.com/andersonwang"   },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/andersonwangxz" },
+  { label: "Figma Community", href: "https://figma.com/@andersonwang"   },
   { label: "Read.cv",  href: "https://read.cv/andersonwang"        },
 ];
 
