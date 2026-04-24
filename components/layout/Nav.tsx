@@ -22,9 +22,7 @@ export default function Nav() {
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: -12 }}
-      animate={{ opacity: 1,  y: 0   }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 1, y: 0 }}
       style={{
         position:        "fixed",
         top:             0,
@@ -58,6 +56,8 @@ export default function Nav() {
             letterSpacing: "-0.02em",
             color:         "var(--text-primary)",
             textDecoration: "none",
+            whiteSpace:    "nowrap",
+            flexShrink:    0,
           }}
         >
           Anderson Wang
