@@ -83,9 +83,7 @@ export default function ContactCTA() {
           style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}
         >
           <Button href="/contact" variant="primary" size="lg">Say hello →</Button>
-          <Button href="mailto:wxzx6008@gmail.com" variant="ghost" size="lg" external>
-            wxzx6008@gmail.com
-          </Button>
+          <Button href="/work" variant="ghost" size="lg">View work first</Button>
         </motion.div>
 
       </div>
