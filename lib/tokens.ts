@@ -1,6 +1,5 @@
 /**
  * Neo Design System — Tokens v2
- * Anderson Wang · andersonwang.io
  *
  * Architecture: 3-tier token model
  *   Tier 1 · Primitives   — raw values, never used directly in components
