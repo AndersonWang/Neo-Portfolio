@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
@@ -47,6 +48,7 @@ export default function RootLayout({
         </div>
 
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
