@@ -19,7 +19,7 @@ export default function DSEffects() {
       className="page-gutter"
     >
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-        <SectionLabel index="05" title="Effects" />
+        <SectionLabel index="06" title="Effects" />
 
         {/* ── Border Radius ── */}
         <h3 style={{ fontFamily: "var(--font-body)", fontSize: "0.875rem", fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--text-muted)", margin: "0 0 1.5rem" }}>

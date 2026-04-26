@@ -69,7 +69,7 @@ export default function DSColors() {
   return (
     <section style={{ borderBottom: "1px solid var(--border-default)", padding: "clamp(4rem,8vw,6rem) 0" }} className="page-gutter">
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-        <SectionLabel index="01" title="Color" />
+        <SectionLabel index="02" title="Color" />
 
         {/* Brand palette */}
         <h3 style={{
@@ -184,6 +184,7 @@ export default function DSColors() {
             { label: "status-error",   value: "var(--status-error)"   },
             { label: "status-success", value: "var(--status-success)" },
             { label: "status-warning", value: "var(--status-warning)" },
+            { label: "status-info",    value: "var(--status-info)"    },
           ].map(({ label, value }, i) => (
             <motion.div
               key={label}

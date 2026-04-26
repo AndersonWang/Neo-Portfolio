@@ -48,7 +48,7 @@ export default function DSTypography() {
       className="page-gutter"
     >
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-        <SectionLabel index="02" title="Typography" />
+        <SectionLabel index="03" title="Typography" />
 
         {/* Typeface trio */}
         <h3 style={{
@@ -173,6 +173,53 @@ export default function DSTypography() {
                 );
               })}
             </div>
+          ))}
+        </div>
+
+        {/* Utility classes */}
+        <h3 style={{
+          fontFamily: "var(--font-body)", fontSize: "0.875rem", fontWeight: 500,
+          letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--text-muted)",
+          margin: "3rem 0 1.5rem",
+        }}>
+          Utility Classes
+        </h3>
+
+        <div style={{ display: "flex", flexDirection: "column", border: "1px solid var(--border-default)", borderRadius: "var(--radius-lg)", overflow: "hidden" }}>
+          {([
+            { cls: ".type-display",  sample: "Neo",                                          note: "Roboto Serif · weight 300 · hero only" },
+            { cls: ".type-lede",     sample: "I distill the complex into systems.",           note: "Satoshi · 22px · max 62ch"              },
+            { cls: ".type-quote",    sample: "Design is the silent ambassador.",              note: "Roboto Serif · italic · weight 300"      },
+            { cls: ".type-meta",     sample: "Product Design",                               note: "Azeret Mono · uppercase · tracked"       },
+            { cls: ".type-eyebrow",  sample: "Case Study",                                   note: "Azeret Mono · uppercase · tracked"       },
+            { cls: ".type-index",    sample: "01",                                           note: "Azeret Mono · not uppercase"             },
+          ] as const).map(({ cls, sample, note }, i) => (
+            <motion.div
+              key={cls}
+              initial={{ opacity: 0, x: -8 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-16px" }}
+              transition={{ duration: 0.4, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "160px 1fr auto",
+                alignItems: "center",
+                gap: "1.5rem",
+                padding: "1rem 1.25rem",
+                borderBottom: i < 5 ? "1px solid var(--border-default)" : "none",
+                backgroundColor: "var(--bg-surface)",
+              }}
+            >
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.6875rem", color: "var(--accent)", letterSpacing: "0.02em" }}>
+                {cls}
+              </span>
+              <span className={cls.slice(1)}>
+                {sample}
+              </span>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", color: "var(--text-muted)", letterSpacing: "0.04em", whiteSpace: "nowrap" }}>
+                {note}
+              </span>
+            </motion.div>
           ))}
         </div>
       </div>
