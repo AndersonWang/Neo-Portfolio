@@ -152,6 +152,7 @@ export const semantic = {
       error:   { light: primitive.color.red.light,   dark: primitive.color.red.dark   },
       success: { light: primitive.color.green.light, dark: primitive.color.green.dark },
       warning: { light: primitive.color.amber.light, dark: primitive.color.amber.dark },
+      info:    { light: '#2A5BB0',                   dark: '#60A5FA'                  },
     },
 
     // Brand palette — semantic access (for illustrations, tags, accents)
@@ -392,6 +393,61 @@ export const getTypeScale = (role: keyof typeof semantic.typography.scale) => {
     fontFamily:    semantic.typography.font[scale.font as keyof typeof semantic.typography.font],
   }
 }
+
+// ─────────────────────────────────────────────────────────────
+// BRAND IDENTITY
+// Non-token constants: wordmark, monogram, voice, icon system.
+// Not referenced by CSS — consumed by design-system docs and
+// brand-facing components (Nav logo, OG images, etc.)
+// ─────────────────────────────────────────────────────────────
+
+export const brand = {
+
+  // · · · WORDMARK · · ·
+  // "anderson w." — the full logotype
+  // Render pattern: name + italic "w." + dot in --accent color
+  // Font: display (Roboto Serif), weight 900 for the mark
+  wordmark: {
+    name:    'anderson ',
+    italic:  'w.',
+    dot:     '.',
+    tagline: 'Product Designer · Est. 2015',  // mono, uppercase, tracked
+  },
+
+  // · · · MONOGRAM · · ·
+  // "aw." — three canonical colorways
+  monogram: {
+    mark: 'aw.',
+    colorways: [
+      { label: 'primary', bg: primitive.color.neutral[900],    fg: primitive.color.neutral[50],  border: false },
+      { label: 'paper',   bg: primitive.color.neutral[50],     fg: primitive.color.neutral[900], border: true  },
+      { label: 'accent',  bg: primitive.color.amethyst[500],   fg: primitive.color.neutral[0],   border: false },
+    ],
+  },
+
+  // · · · VOICE · · ·
+  // Plainspoken, specific, no filler.
+  voice: {
+    principles: ['plainspoken', 'specific', 'no filler'],
+    yes: [
+      'Ten years shipping for 1M+ users.',
+      'I distill the complex into systems.',
+    ],
+    no: [
+      'Passionate about crafting delightful, human-centered experiences.',
+      'Unlocking next-generation design paradigms.',
+    ],
+  },
+
+  // · · · ICONOGRAPHY · · ·
+  // Lucide React, stroke-width 1.5. Paired with mono label below each icon.
+  icons: {
+    library:     'lucide-react',
+    strokeWidth: 1.5,
+    core: ['arrow-up-right', 'circle-dot', 'layers', 'pen-line', 'mail', 'github', 'figma', 'play'],
+  },
+}
+
 
 // ─────────────────────────────────────────────────────────────
 // LEGACY COMPAT
