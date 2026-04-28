@@ -1,4 +1,4 @@
-# Anderson Wang — Portfolio Remake
+# Anderson Wang Neo-Portfolio Remake
 
 A portfolio that is also a case study. Built with an AI-native workflow using Claude Code, from brief to deployed product.
 
