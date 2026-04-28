@@ -50,17 +50,20 @@ export default function Nav() {
         <Link
           href="/"
           style={{
-            fontFamily:    "var(--font-display)",
-            fontSize:      "1.125rem",
-            fontWeight:    300,
-            letterSpacing: "-0.02em",
-            color:         "var(--text-primary)",
             textDecoration: "none",
-            whiteSpace:    "nowrap",
             flexShrink:    0,
+            display:       "flex",
+            alignItems:    "center",
           }}
         >
-          Anderson Wang
+          <img
+            src="/wordmark.svg"
+            alt="Anderson Wang"
+            style={{
+              height: "28px",
+              width:  "auto",
+            }}
+          />
         </Link>
 
         {/* Nav links */}
