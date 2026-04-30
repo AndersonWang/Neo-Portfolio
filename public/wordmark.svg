@@ -1,6 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 220" width="1100" height="220" role="img" aria-label="Anderson W.">
-  <defs>
-    
-  </defs>
-  <text x="40" y="170" font-family="Roboto, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-weight="900" font-size="180" letter-spacing="-7" class="ink">anderson <tspan font-style="italic" font-weight="700">w.</tspan><tspan class="accent">.</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 220" width="1100" height="220" role="img" aria-label="Anderson Wang">
+  <text x="40" y="170" font-family="Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="180" letter-spacing="-7" fill="#0F0E0D">anderson <tspan font-style="italic" font-weight="700">w.</tspan><tspan fill="#E8432B">.</tspan></text>
 </svg>
