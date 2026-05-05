@@ -195,6 +195,33 @@ html {
   padding-right: clamp(1rem, 4vw, 2rem);
 }
 
+/* Specialty section two-column layout (sticky label + card grid) */
+.specialty-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.specialty-label {
+  position: static;
+}
+
+@media (min-width: 768px) {
+  .specialty-layout {
+    flex-direction: row;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: flex-start;
+  }
+
+  .specialty-label {
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 88px;
+    align-self: flex-start;
+  }
+}
+
 /* Selection */
 ::selection {
   background-color: var(--accent-subtle);

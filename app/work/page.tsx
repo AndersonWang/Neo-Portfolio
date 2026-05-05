@@ -1,84 +1,53 @@
 import type { Metadata } from "next";
-import { getAllCaseStudies } from "@/lib/mdx";
-import Card from "@/components/ui/Card";
+import { getCaseStudiesBySpecialty } from "@/lib/mdx";
+import WorkHero from "@/components/sections/work/WorkHero";
+import SpecialtySection from "@/components/sections/work/SpecialtySection";
 
 export const metadata: Metadata = {
   title:       "Work",
-  description: "Selected product design case studies — design systems, interaction design, and end-to-end product work.",
+  description: "Selected case studies in design systems, product design, and prototyping by Anderson Wang — Senior Product Designer.",
 };
 
 export default function WorkPage() {
-  const caseStudies = getAllCaseStudies();
+  const dsStudies    = getCaseStudiesBySpecialty("design-systems");
+  const dpStudies    = getCaseStudiesBySpecialty("design-process");
+  const protoStudies = getCaseStudiesBySpecialty("prototyping");
+  const totalCount   = dsStudies.length + dpStudies.length + protoStudies.length;
 
   return (
-    <main className="page-gutter" style={{ maxWidth: "1280px", margin: "0 auto", width: "100%" }}>
-      {/* Header */}
-      <div style={{
-        paddingTop:    "clamp(4rem, 8vw, 6rem)",
-        paddingBottom: "clamp(3rem, 5vw, 4rem)",
-        borderBottom:  "1px solid var(--border-default)",
-        marginBottom:  "clamp(3rem, 5vw, 4rem)",
-      }}>
-        <p style={{
-          fontFamily:    "var(--font-mono)",
-          fontSize:      "0.75rem",
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color:         "var(--text-muted)",
-          margin:        "0 0 1rem",
-        }}>
-          {caseStudies.length} projects
-        </p>
-        <h1 style={{
-          fontFamily:    "var(--font-display)",
-          fontSize:      "clamp(3rem, 6vw, 6rem)",
-          fontWeight:    300,
-          lineHeight:    1.0,
-          letterSpacing: "-0.03em",
-          color:         "var(--text-primary)",
-          margin:        0,
-        }}>
-          Work
-        </h1>
-      </div>
+    <main
+      className="page-gutter"
+      style={{ maxWidth: "1280px", margin: "0 auto", width: "100%" }}
+    >
+      <WorkHero totalCount={totalCount} />
 
-      {/* Grid */}
-      {caseStudies.length > 0 ? (
-        <div
-          style={{
-            display:             "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 360px), 1fr))",
-            gap:                 "1.5rem",
-            paddingBottom:       "clamp(4rem, 8vw, 6rem)",
-          }}
-        >
-          {caseStudies.map((cs, i) => (
-            <Card
-              key={cs.slug}
-              href={`/work/${cs.slug}`}
-              title={cs.frontmatter.title}
-              description={cs.frontmatter.description}
-              year={cs.frontmatter.year}
-              tags={cs.frontmatter.tags}
-              imageSrc={cs.frontmatter.cover}
-              index={i}
-            />
-          ))}
-        </div>
-      ) : (
-        <div style={{
-          paddingBottom: "clamp(4rem, 8vw, 6rem)",
-          textAlign:     "center",
-        }}>
-          <p style={{
-            fontFamily: "var(--font-body)",
-            fontSize:   "1rem",
-            color:      "var(--text-muted)",
-          }}>
-            Case studies coming soon.
-          </p>
-        </div>
-      )}
+      <SpecialtySection
+        index="01"
+        label="Design Systems"
+        heading="Design Systems"
+        description="I architect token systems, component libraries, and governance processes that let teams move faster without breaking consistency. The work is as much organizational design as it is visual craft."
+        tagColor="amethyst"
+        caseStudies={dsStudies}
+      />
+
+      <SpecialtySection
+        index="02"
+        label="Design Process"
+        heading="Design Process"
+        description="End-to-end product design — from ambiguous brief through research, ideation, and iteration to a shipped experience. I stay close to the problem and the people who have it."
+        tagColor="gold"
+        caseStudies={dpStudies}
+      />
+
+      <SpecialtySection
+        index="03"
+        label="Prototyping"
+        heading="Prototyping"
+        description="High-fidelity prototypes in Framer, Origami, code, or AI-assisted tooling. I build to think, build to test, and build to hand off with zero ambiguity."
+        tagColor="peridot"
+        caseStudies={protoStudies}
+        isLast
+      />
     </main>
   );
 }

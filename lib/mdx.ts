@@ -4,6 +4,11 @@ import matter from "gray-matter";
 
 const CASE_STUDIES_DIR = path.join(process.cwd(), "content/case-studies");
 
+export type CaseStudySpecialty =
+  | "design-systems"
+  | "design-process"
+  | "prototyping";
+
 export interface CaseStudyFrontmatter {
   title:       string;
   description: string;
@@ -11,6 +16,7 @@ export interface CaseStudyFrontmatter {
   role:        string;
   timeline:    string;
   tags:        string[];
+  specialty:   CaseStudySpecialty;
   company?:    string;
   cover?:      string;   // path to cover image
   featured:    boolean;
@@ -53,6 +59,15 @@ export function getAllCaseStudies(): CaseStudy[] {
     .map((slug) => getCaseStudy(slug))
     .filter((cs): cs is CaseStudy => cs !== null)
     .sort((a, b) => b.frontmatter.year - a.frontmatter.year);
+}
+
+/** Get all case studies for a given specialty, sorted by year desc */
+export function getCaseStudiesBySpecialty(
+  specialty: CaseStudySpecialty
+): CaseStudy[] {
+  return getAllCaseStudies().filter(
+    (cs) => cs.frontmatter.specialty === specialty
+  );
 }
 
 /** Get prev / next slugs for in-page navigation */
