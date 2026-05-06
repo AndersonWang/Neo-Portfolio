@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 
-// ── Typewriter ──────────────────────────────────────────────────────────────
+// ── Rotating text ───────────────────────────────────────────────────────────
 
 const PHRASES = [
   "scalable systems.",
@@ -13,62 +13,38 @@ const PHRASES = [
   "design clarity.",
 ];
 
-type TypingPhase = "typing" | "holding" | "deleting";
-
-function TypewriterText() {
-  const [phraseIdx, setPhraseIdx] = useState(0);
-  const [charIdx,   setCharIdx]   = useState(0);
-  const [phase,     setPhase]     = useState<TypingPhase>("typing");
+function RotatingText() {
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const phrase = PHRASES[phraseIdx];
-
-    if (phase === "typing") {
-      if (charIdx < phrase.length) {
-        const t = setTimeout(
-          () => setCharIdx((c) => c + 1),
-          55 + Math.random() * 30,
-        );
-        return () => clearTimeout(t);
-      }
-      const t = setTimeout(() => setPhase("deleting"), 2200);
-      return () => clearTimeout(t);
-    }
-
-    if (phase === "deleting") {
-      if (charIdx > 0) {
-        const t = setTimeout(() => setCharIdx((c) => c - 1), 32);
-        return () => clearTimeout(t);
-      }
-      const t = setTimeout(() => {
-        setPhraseIdx((i) => (i + 1) % PHRASES.length);
-        setPhase("typing");
-      }, 180);
-      return () => clearTimeout(t);
-    }
-  }, [charIdx, phase, phraseIdx]);
-
-  const display = PHRASES[phraseIdx].slice(0, charIdx);
+    const id = setInterval(() => setIndex((i) => (i + 1) % PHRASES.length), 2800);
+    return () => clearInterval(id);
+  }, []);
 
   return (
-    <span style={{ color: "var(--accent)", whiteSpace: "nowrap" }}>
-      {display}
-      {/* blinking cursor */}
-      <motion.span
-        animate={{ opacity: [1, 1, 0, 0] }}
-        transition={{ duration: 1, repeat: Infinity, times: [0, 0.45, 0.5, 0.95] }}
-        aria-hidden
-        style={{
-          display:         "inline-block",
-          width:           "3px",
-          height:          "0.85em",
-          backgroundColor: "var(--accent)",
-          borderRadius:    "1px",
-          marginLeft:      "4px",
-          verticalAlign:   "middle",
-          transform:       "translateY(-5%)",
-        }}
-      />
+    // Clip the slide-in/out motion — height = 1 line, overflow hidden
+    <span
+      style={{
+        display:       "inline-block",
+        overflow:      "hidden",
+        verticalAlign: "bottom",
+        // Extra bottom room so descenders aren't clipped
+        paddingBottom: "0.08em",
+        marginBottom:  "-0.08em",
+      }}
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={index}
+          initial={{ y: "105%" }}
+          animate={{ y: 0 }}
+          exit={{    y: "-105%" }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          style={{ display: "inline-block", color: "var(--accent)" }}
+        >
+          {PHRASES[index]}
+        </motion.span>
+      </AnimatePresence>
     </span>
   );
 }
@@ -125,7 +101,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Headline — two lines, second has typewriter */}
+        {/* Headline */}
         <motion.h1
           variants={item}
           style={{
@@ -140,8 +116,7 @@ export default function Hero() {
         >
           I distill complexity
           <br />
-          into{" "}
-          <TypewriterText />
+          into{" "}<RotatingText />
         </motion.h1>
 
         {/* Subtext + CTA */}
