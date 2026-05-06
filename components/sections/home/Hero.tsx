@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 // ── Rotating text ───────────────────────────────────────────────────────────
 
 const PHRASES = [
-  "scalable systems.",
+  "scalable solutions.",
   "AI-native products.",
   "lasting foundations.",
   "design clarity.",
