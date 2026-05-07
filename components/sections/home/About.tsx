@@ -146,9 +146,9 @@ export default function About() {
             borderTop:           "1px solid var(--border-default)",
           }}>
             {[
-              { value: "6+",  label: "Years experience" },
-              { value: "30+", label: "Products shipped"  },
-              { value: "3",   label: "Design systems built" },
+              { value: "1M+", label: "Total users"                    },
+              { value: "22",  label: "Launched in States & Provinces" },
+              { value: "20+", label: "Products shipped"               },
             ].map(({ value, label }, i) => (
               <motion.div
                 key={label}
