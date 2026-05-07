@@ -8,6 +8,8 @@ import Callout from "@/components/ui/mdx/Callout";
 import FullImage from "@/components/ui/mdx/FullImage";
 import ImagePair from "@/components/ui/mdx/ImagePair";
 import { Stat, StatRow } from "@/components/ui/mdx/Stat";
+import RoleMap from "@/components/ui/mdx/RoleMap";
+import DecisionRecord from "@/components/ui/mdx/DecisionRecord";
 import Link from "next/link";
 
 // MDX components available inside every case study file
@@ -17,6 +19,8 @@ const components = {
   ImagePair,
   Stat,
   StatRow,
+  RoleMap,
+  DecisionRecord,
   // Override default MDX HTML elements with Neo-styled versions
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2

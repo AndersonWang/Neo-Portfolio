@@ -1,0 +1,161 @@
+---
+title: Bally's Sports Betting Terminal
+description: Bridging the Ballyverse — designing the physical-digital touchpoint that unified Bally's mobile ecosystem with the casino floor across 19 resort properties.
+year: 2022
+role: UX Designer & Prototype Lead
+timeline: 9 months
+company: Bally's Interactive
+specialty: design-process
+tags: [Hardware UX, System Design, Prototyping, Operational ROI]
+featured: true
+---
+
+<StatRow>
+  <Stat value="19"    label="Resort properties"  sublabel="Deployment footprint"         />
+  <Stat value="90%"   label="Daily tasks"         sublabel="Completable from new dashboard" />
+  <Stat value="80hrs" label="Training burden"     sublabel="Reduced via ops redesign"      />
+</StatRow>
+
+---
+
+## Context & Stakes
+
+Bally's was in the middle of an aggressive omni-channel push called the **"Ballyverse"** — a strategy to collapse the boundary between their mobile apps and the physical casino floor. The Sports Betting Terminal was the missing physical node in that strategy. Without it, a player who built loyalty points on their phone had no way to feel that relationship when they walked into a resort.
+
+The business pressure was real: competitors were deploying kiosks faster. If the terminal felt like a generic hardware product rather than a coherent extension of the Ballyverse brand, the entire mobile investment would lose its anchor.
+
+The constraint stack was unusually complex for a software project: hardware vendor (Suzohapp) with fixed physical dimensions, ADA and WCAG 2.1 compliance requirements, casino regulatory approval, strict security SOPs for casino operations, and a committed 19-property rollout timeline.
+
+<Callout type="insight">
+The terminal wasn't just a product — it was a proof point for an entire company strategy. If the Ballyverse vision was going to be credible to investors and partners, this hardware had to feel like it belonged to the same ecosystem as the mobile app.
+</Callout>
+
+---
+
+## My Ownership
+
+<RoleMap roles={[
+  { name: "Anderson Wang",       role: "UX Lead + Prototype",     org: "Sports Product Studio"  },
+  { name: "Product Manager",     role: "PRD Co-author",           org: "Sports Product Studio"  },
+  { name: "Suzohapp",            role: "Hardware Vendor",         org: "External Partner"       },
+  { name: "Engineering Team",    role: "Build + Integration",     org: "Manchester Office"      },
+  { name: "Casino Operations",   role: "Staff Research + Ops",    org: "Bally's Resorts"        }
+]} />
+
+I was responsible for the end-to-end UX direction across both the player-facing experience and the staff operational interface. This included: hardware ergonomics specification in collaboration with Suzohapp, the full prototype suite in Figma and ProtoPie, the redesign of the staff maintenance dashboard, the accessibility audit and ADA alignment, and the "Living Demo" used to secure executive buy-in.
+
+---
+
+## The Problem, Reframed
+
+The brief I received was: *"Design a sports betting terminal UI."*
+
+The actual problem was: *"Design a system that works simultaneously for three very different users — the player standing in a noisy casino, the operations staff who maintains it multiple times a day, and the executive whose budget approval depends on believing this investment will hold up across 19 properties."*
+
+<Callout type="insight">
+What I chose NOT to solve: full feature parity with the Bally's mobile app. Replicating every mobile feature on a terminal would have produced a shrunken phone experience — not a venue centerpiece. The terminal needed to do fewer things more confidently, not everything at lower quality.
+</Callout>
+
+---
+
+## Key Decisions
+
+<DecisionRecord
+  label="Ergonomics: bottom shelf"
+  chosen="Add a physical ledge at the base of the lower touchscreen — a surface for drinks, phones, or betting slips."
+  rejected="Flush-bottom terminal design that maximised screen real estate but eliminated any resting surface."
+  rationale="Qualitative research with casino staff and observation of player behaviour at existing terminals showed that players in high-engagement states (watching a game, checking their phone, holding a drink) disengage from terminals that demand two free hands. The shelf reduced friction for extended sessions — which is directly correlated with wager volume."
+/>
+
+<DecisionRecord
+  label="Staff dashboard scope"
+  chosen="Design the dashboard to resolve 90% of daily tasks cleanly, with clear escalation paths for the remaining 10%."
+  rejected="The operations team's initial request: surface everything on a single screen to eliminate the need for any escalation."
+  rationale="A dashboard that tries to show everything creates cognitive overload for staff who are already managing a noisy floor environment. 90% coverage with clear, fast flows is more operationally effective than 100% coverage that's slow and error-prone. We validated the 90% threshold through direct research with casino floor staff across two properties."
+/>
+
+<DecisionRecord
+  label="Prototype fidelity for stakeholders"
+  chosen="High-fidelity interactive prototype in ProtoPie — simulating hardware interaction timing (printer sound, scanner feedback, ticket-out animation) before a line of code was written."
+  rejected="Low-fidelity wireframes or a traditional written specification document."
+  rationale="The executive stakeholders needed to feel the product to approve it. A spec document cannot convey whether the 200ms delay between tapping 'print' and hearing the printer feels satisfying or broken. The ProtoPie prototype closed that gap — and replaced a 40-page spec deck that would have generated weeks of back-and-forth."
+/>
+
+<DecisionRecord
+  label="Idle screen strategy"
+  chosen="Dynamic, event-driven idle screen — configurable per sports season (Super Bowl, March Madness, Stanley Cup) with promotional flexibility."
+  rejected="A static branded idle screen with the Bally's logo and ambient motion."
+  rationale="A static screen is a missed marketing surface. By making the idle screen configurable per event, we gave the marketing team a tool and gave players a reason to look up at the terminal even when they weren't actively betting. This also created a budget justification: the terminal generates incremental engagement, not just transactional throughput."
+/>
+
+---
+
+## Solutions
+
+### 01 — Hardware UX
+
+The hardest constraint in this project wasn't the UI — it was that every screen decision had a physical hardware dependency, and every hardware dependency had a regulatory constraint.
+
+Working directly with Suzohapp, I co-authored the Product Requirement Documents that governed peripheral placement: scanners, bill acceptors, card readers, and the printer were repositioned for maximum reach accessibility across a wide range of player heights. ADA compliance and WCAG 2.1 alignment were designed in from the start, not retrofitted.
+
+The internal peripheral layout was also redesigned based on direct feedback from casino operations teams — a change that significantly streamlined maintenance workflows and reduced daily terminal downtime.
+
+### 02 — Operational Excellence
+
+A terminal deployed across 19 properties is only as good as the staff who operate it. Through qualitative interviews with Bally's casino floor staff, I learned something that hadn't been in any brief: a staff member responsible for terminal operations required 80 hours of training to reach proficiency. They managed cashbox changes, paper reloads, TITO jams, and issue escalation — all while following strict security protocols — multiple times per shift.
+
+The redesigned staff dashboard collapsed the most common issues into a single **"status at a glance"** view: printer paper level, cashbox capacity, active errors, and network state — all visible before any deep navigation. The 90% daily task coverage target was validated directly with ops staff.
+
+<Callout type="quote">
+"I used to have to go three or four screens deep just to check if the printer needed paper. Now I can see it the second I open the maintenance panel."
+— Casino Operations Staff, Research Interview
+</Callout>
+
+### 03 — Player Experience
+
+The player-facing terminal UI was designed to echo Bally's digital mobile products — not replicate them. Shared design language (typography, colour, iconography) made the transition from mobile app to physical terminal feel like a natural extension of the same ecosystem.
+
+A completely redesigned **dynamic welcome screen** allows sports or leagues to be promoted during tentpole events. Custom animations were introduced for key hardware interactions: ticket printing, card scanning, and winning results — each with timing calibrated to the actual hardware response latency, so the digital feedback feels physically connected to what the machine is doing.
+
+### 04 — Prototype as Strategic Tool
+
+I built two distinct prototype artefacts, each for a different audience:
+
+**The Living Demo** — a full ProtoPie prototype of the player experience, hardware interactions and all, used to present the vision to executive stakeholders. It secured buy-in and budget approval without requiring a single line of production code.
+
+**The Interactive PRD** — a Figma prototype linked to annotated specs, used with the Manchester engineering team. By simulating complex hardware interactions in the prototype, the team eliminated the largest source of ambiguity in the build phase: what the hardware feedback should look and feel like at each moment.
+
+### 05 — Loyalty & Personalisation
+
+The Bally Rewards integration was the detail that made the terminal feel personal rather than transactional. When a player scans their loyalty card, they receive a personalised welcome — their name, their tier, their current points balance. Points earned at the terminal feed directly back into the same rewards ecosystem as the mobile app.
+
+This closed the Ballyverse loop: the same player identity, rewards, and brand personality existed whether you were betting from your couch or standing on a casino floor.
+
+---
+
+## Cross-functional Influence
+
+**Executive alignment** — The ProtoPie Living Demo replaced a 40-page written specification as the primary communication tool for executive stakeholders. Buy-in and budget approval for the 19-property rollout were secured through a prototype session, not a document review.
+
+**Engineering alignment** — The interactive PRD served as a functional specification for the Manchester development team. By simulating hardware interaction timing in Figma and ProtoPie, I removed the most common source of spec ambiguity (what does "good" feel like for a hardware response?) before the build phase began. This measurably reduced rework cycles.
+
+**Operations alignment** — Four dedicated qualitative research sessions with casino floor staff directly shaped the scope and priority order of the staff dashboard. The 90% daily task coverage threshold came from this research, not from an internal assumption.
+
+---
+
+## Outcomes & Impact
+
+The terminal was deployed across all 19 Bally's resort properties and became the physical centrepiece of the Ballyverse strategy.
+
+- **Staff dashboard** enables 90% of daily operational tasks without escalation — reducing training overhead and floor downtime across the entire portfolio
+- **ADA/WCAG 2.1 compliant** — the first terminal in Bally's physical gaming portfolio to meet this standard
+- **Executive buy-in secured via prototype** — the Living Demo approach has since been adopted as a standard practice for hardware/software R&D projects across the team
+- **Ballyverse continuity delivered** — the loyalty integration created a measurable link between mobile engagement and terminal usage for the first time
+
+---
+
+## Reflection
+
+If I were doing this again, I would instrument the prototype testing phase earlier — specifically for the staff-facing flows. We validated the player experience heavily in ProtoPie, but the staff dashboard was tested primarily through research interviews rather than interactive prototypes. A high-fidelity staff prototype would have surfaced edge cases in maintenance workflows earlier in the process.
+
+The broader lesson this project taught me: any product that has an operational surface — a staff portal, an admin dashboard, a CMS — has a "silent user" whose experience directly determines whether the customer experience is possible at all. I now apply that lens to every product I work on.
