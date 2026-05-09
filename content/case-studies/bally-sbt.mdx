@@ -10,6 +10,12 @@ tags: [Hardware UX, System Design, Prototyping, Operational ROI]
 featured: true
 ---
 
+<FullImage
+  src="/case-studies/bally-sbt/hero-banner.png"
+  alt="Bally's Sports Betting Terminal — Sports Product Studio"
+  aspect="16/9"
+/>
+
 <StatRow>
   <Stat value="19"    label="Resort properties"  sublabel="Deployment footprint"         />
   <Stat value="90%"   label="Daily tasks"         sublabel="Completable from new dashboard" />
@@ -35,7 +41,7 @@ The terminal wasn't just a product — it was a proof point for an entire compan
 ## My Ownership
 
 <RoleMap roles={[
-  { name: "Anderson Wang",       role: "UX Lead + Prototype",     org: "Sports Product Studio"  },
+  { name: "Anderson Wang",       role: "UX Designer + Prototype Lead",     org: "Sports Product Studio"  },
   { name: "Product Manager",     role: "PRD Co-author",           org: "Sports Product Studio"  },
   { name: "Suzohapp",            role: "Hardware Vendor",         org: "External Partner"       },
   { name: "Engineering Team",    role: "Build + Integration",     org: "Manchester Office"      },
@@ -48,7 +54,7 @@ I was responsible for the end-to-end UX direction across both the player-facing 
 
 ## The Problem, Reframed
 
-The brief I received was: *"Design a sports betting terminal UI."*
+The brief I received was: *"Design a sports betting that integrates with Bally's experience."*
 
 The actual problem was: *"Design a system that works simultaneously for three very different users — the player standing in a noisy casino, the operations staff who maintains it multiple times a day, and the executive whose budget approval depends on believing this investment will hold up across 19 properties."*
 
@@ -100,6 +106,20 @@ Working directly with Suzohapp, I co-authored the Product Requirement Documents 
 
 The internal peripheral layout was also redesigned based on direct feedback from casino operations teams — a change that significantly streamlined maintenance workflows and reduced daily terminal downtime.
 
+<ImagePair
+  src1="/case-studies/bally-sbt/hardware-terminal.png"
+  src2="/case-studies/bally-sbt/hardware-prototype.png"
+  alt1="Suzohapp terminal hardware — front peripheral layout and full unit render"
+  alt2="Accessible Variant Prototype — internal layout with open peripherals"
+  caption="Left: Suzohapp terminal reference unit. Right: Accessible variant prototype with repositioned peripherals."
+/>
+
+<FullImage
+  src="/case-studies/bally-sbt/ada-specs.png"
+  alt="ADA Section 307.3 — Post-Mounted Freestanding Hardware limits"
+  caption="ADA Section 307.3 compliance requirements informing physical terminal dimensions and reach ranges."
+/>
+
 ### 02 — Operational Excellence
 
 A terminal deployed across 19 properties is only as good as the staff who operate it. Through qualitative interviews with Bally's casino floor staff, I learned something that hadn't been in any brief: a staff member responsible for terminal operations required 80 hours of training to reach proficiency. They managed cashbox changes, paper reloads, TITO jams, and issue escalation — all while following strict security protocols — multiple times per shift.
@@ -124,6 +144,19 @@ I built two distinct prototype artefacts, each for a different audience:
 **The Living Demo** — a full ProtoPie prototype of the player experience, hardware interactions and all, used to present the vision to executive stakeholders. It secured buy-in and budget approval without requiring a single line of production code.
 
 **The Interactive PRD** — a Figma prototype linked to annotated specs, used with the Manchester engineering team. By simulating complex hardware interactions in the prototype, the team eliminated the largest source of ambiguity in the build phase: what the hardware feedback should look and feel like at each moment.
+
+<YouTubeEmbed
+  url="https://www.youtube.com/watch?v=sA1GKst94Ew"
+  caption="ProtoPie Living Demo — high-fidelity prototype simulating hardware interactions used for executive buy-in."
+/>
+
+<ImagePair
+  src1="/case-studies/bally-sbt/winning-screen.png"
+  src2="/case-studies/bally-sbt/loyalty-integration.png"
+  alt1="Winning celebration screen with coin animations and payout confirmation"
+  alt2="Bally Rewards loyalty integration — personalised welcome and home overview"
+  caption="Left: Winning state with celebratory feedback timed to hardware responses. Right: Bally Rewards loyalty integration."
+/>
 
 ### 05 — Loyalty & Personalisation
 

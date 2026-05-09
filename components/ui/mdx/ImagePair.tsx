@@ -13,7 +13,7 @@ export default function ImagePair({ src1, src2, alt1, alt2, caption }: ImagePair
     <figure style={{ margin: "2.5rem 0" }}>
       <div style={{
         display:             "grid",
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
         gap:                 "0.75rem",
       }}>
         {[{ src: src1, alt: alt1 }, { src: src2, alt: alt2 }].map(({ src, alt }, i) => (

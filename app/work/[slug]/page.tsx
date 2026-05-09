@@ -10,6 +10,7 @@ import ImagePair from "@/components/ui/mdx/ImagePair";
 import { Stat, StatRow } from "@/components/ui/mdx/Stat";
 import RoleMap from "@/components/ui/mdx/RoleMap";
 import DecisionRecord from "@/components/ui/mdx/DecisionRecord";
+import YouTubeEmbed from "@/components/ui/mdx/YouTubeEmbed";
 import Link from "next/link";
 
 // MDX components available inside every case study file
@@ -21,6 +22,7 @@ const components = {
   StatRow,
   RoleMap,
   DecisionRecord,
+  YouTubeEmbed,
   // Override default MDX HTML elements with Neo-styled versions
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
