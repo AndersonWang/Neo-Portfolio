@@ -1,31 +1,19 @@
-import Image from "next/image";
+import LightboxImage from "./LightboxImage";
 
 interface FullImageProps {
   src:      string;
   alt?:     string;
   caption?: string;
-  aspect?:  string;  // e.g. "16/9", "4/3", "1/1"
 }
 
-export default function FullImage({ src, alt, caption, aspect = "16/9" }: FullImageProps) {
+export default function FullImage({ src, alt, caption }: FullImageProps) {
   return (
     <figure style={{ margin: "2.5rem 0" }}>
-      <div style={{
-        position:        "relative",
-        width:           "100%",
-        aspectRatio:     aspect,
-        borderRadius:    "var(--radius-lg)",
-        overflow:        "hidden",
-        backgroundColor: "var(--bg-raised)",
-      }}>
-        <Image
-          src={src}
-          alt={alt ?? ""}
-          fill
-          style={{ objectFit: "cover" }}
-          sizes="(max-width: 768px) 100vw, 720px"
-        />
-      </div>
+      <LightboxImage
+        src={src}
+        alt={alt}
+        sizes="(max-width: 768px) 100vw, 720px"
+      />
       {caption && (
         <figcaption style={{
           fontFamily:    "var(--font-mono)",
