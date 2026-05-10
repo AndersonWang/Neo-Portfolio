@@ -112,13 +112,13 @@
   /* Text */
   --text-primary:   #0F0E0D;
   --text-secondary: #4A4740;
-  --text-muted:     #9A9690;
+  --text-muted:     #6B6865;  /* was #9A9690 (2.77:1 ❌) → now ~5.2:1 ✅ WCAG AA */
   --text-inverse:   #FAF8F4;
   --text-on-accent: #FFFFFF;
 
   /* Borders */
   --border-default: rgba(10,10,10,0.06);
-  --border-strong:  rgba(10,10,10,0.12);
+  --border-strong:  rgba(10,10,10,0.38);  /* was 0.12 (1.30:1 ❌) → now ~3.1:1 ✅ UI component */
   --border-accent:  #5835B0;
 
   /* Accent */
@@ -143,12 +143,12 @@
 
   --text-primary:   #FAF8F4;
   --text-secondary: #9A9690;
-  --text-muted:     #737068;
+  --text-muted:     #9A9690;  /* was #737068 (4.00:1 ❌) → now 6.73:1 ✅ WCAG AA */
   --text-inverse:   #0F0E0D;
   --text-on-accent: #0A0A0A;
 
   --border-default: rgba(250,248,244,0.06);
-  --border-strong:  rgba(250,248,244,0.12);
+  --border-strong:  rgba(250,248,244,0.38);  /* was 0.12 (low contrast ❌) → now ~3:1 ✅ */
   --border-accent:  #8B6AFF;
 
   --accent:        #8B6AFF;

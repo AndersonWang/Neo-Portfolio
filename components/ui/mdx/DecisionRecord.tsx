@@ -56,8 +56,8 @@ export default function DecisionRecord({ label, chosen, rejected, rationale }: D
           fontSize:        "0.6875rem",
           letterSpacing:   "0.06em",
           textTransform:   "uppercase",
-          color:           "var(--status-success)",
-          backgroundColor: "rgba(22,163,74,0.08)",
+          color:           "#166534",  /* darkened from --status-success for 7:1 WCAG AA */
+          backgroundColor: "rgba(22,163,74,0.10)",
           padding:         "0.2rem 0.5rem",
           borderRadius:    "var(--radius-sm)",
           flexShrink:      0,

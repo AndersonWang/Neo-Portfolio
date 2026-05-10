@@ -107,8 +107,8 @@ export default function LightboxImage({
               position:        "absolute",
               top:             "1.25rem",
               right:           "1.25rem",
-              width:           "2.25rem",
-              height:          "2.25rem",
+              width:           "2.75rem",   /* 44px — WCAG 2.5.5 minimum touch target */
+              height:          "2.75rem",
               borderRadius:    "9999px",
               border:          "1px solid rgba(255,255,255,0.2)",
               backgroundColor: "rgba(255,255,255,0.08)",
