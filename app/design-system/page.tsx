@@ -6,6 +6,7 @@ import DSTypography from "@/components/sections/ds/DSTypography";
 import DSMotion     from "@/components/sections/ds/DSMotion";
 import DSComponents from "@/components/sections/ds/DSComponents";
 import DSEffects    from "@/components/sections/ds/DSEffects";
+import DSChangelog  from "@/components/sections/ds/DSChangelog";
 
 export const metadata: Metadata = {
   title: "Design System",
@@ -23,6 +24,7 @@ export default function DesignSystemPage() {
       <DSMotion />
       <DSComponents />
       <DSEffects />
+      <DSChangelog />
     </main>
   );
 }

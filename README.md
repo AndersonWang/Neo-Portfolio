@@ -110,6 +110,59 @@ lib/
 
 ---
 
+## Neo Design System Changelog
+
+### v1.2 — WCAG 2.1 AA Audit & Remediation *(May 2026)*
+
+A systematic contrast audit against WCAG 2.1 AA revealed 6 failures across text tokens, UI component borders, and interactive elements. All critical and major issues were remediated in this release.
+
+**Fixes applied:**
+
+| Token / Element | Before | After | Contrast (on bg-page) | Status |
+|---|---|---|---|---|
+| `--text-muted` (light) | `#9A9690` | `#6B6865` | 2.77:1 → ~5.2:1 | ✅ Fixed |
+| `--text-muted` (dark) | `#737068` | `#9A9690` | 4.00:1 → 6.73:1 | ✅ Fixed |
+| `--border-strong` (light) | `rgba(0,0,0,0.12)` | `rgba(0,0,0,0.38)` | 1.30:1 → ~3.1:1 | ✅ Fixed (WCAG 1.4.11) |
+| `--border-strong` (dark) | `rgba(fff,0.12)` | `rgba(fff,0.38)` | — → ~3:1 | ✅ Fixed |
+| `DecisionRecord` "Chosen" badge | `#16A34A` | `#166534` | 3.30:1 → ~7:1 | ✅ Fixed |
+| `LightboxImage` close button | 36px | 44px | — | ✅ Fixed (WCAG 2.5.5) |
+
+**Confirmed passing (no changes needed):**
+`--text-primary` (18.18:1), `--text-secondary` (8.74:1), `--accent` (7.76:1), `--accent` on subtle (7.09:1), `--status-error` (4.55:1)
+
+---
+
+### v1.1 — Case Study MDX Component Library *(May 2026)*
+
+Standard MDX prose couldn't surface the strategic complexity of senior-level design work. Dedicated components were added to make decision rationale, team structure, and impact stats visually distinct and scannable.
+
+**Added:**
+- `RoleMap` — responsive card grid for team/stakeholder structure
+- `DecisionRecord` — structured Chosen / Rejected / Why decision card
+- `YouTubeEmbed` — responsive 16:9 video embed with radius-clipped container
+- `LightboxImage` — hover-to-scale, click-to-enlarge image wrapper with blur overlay
+
+**Changed:**
+- `FullImage` — removed fixed aspect ratio, now renders at natural image dimensions; wraps `LightboxImage`
+- `ImagePair` — switched to `auto-fit minmax(260px)` grid, `align-items: start`, wraps `LightboxImage`
+
+---
+
+### v1.0 — Initial Release *(May 2026)*
+
+Neo Design System launched as the token foundation for the portfolio. The design system page (`/design-system`) serves as the living documentation — the codebase *is* the spec.
+
+**Added:**
+- 3-tier token model: Primitives → Semantics → Components (source of truth in `lib/tokens.ts`)
+- Color system: Amethyst brand + Lilac, Rose, Gold, Peridot editorial accents + warm neutrals
+- Automatic light/dark theming via CSS custom properties (`.dark` class on root)
+- Typography: Roboto Serif (display) / Satoshi (body) / Azeret Mono (meta); fluid `clamp()` scale
+- Motion system: 7 named durations, 4 named easings, stagger scale
+- Core components: `Button` (3 variants × 3 sizes), `Card` (3D tilt, scroll reveal), `Tag` (5 colors × 2 sizes)
+- MDX base components: `Callout`, `FullImage`, `ImagePair`, `Stat` + `StatRow`
+
+---
+
 ## Status
 
 Core infrastructure is complete and deployed. The design system page documents the full token system live. Case studies are being authored in MDX. Remaining work: custom cursor, smooth scroll, additional case study content.
