@@ -82,9 +82,9 @@ What I chose NOT to solve: full feature parity with the Bally's mobile app. Repl
 
 <DecisionRecord
   label="Prototype fidelity for stakeholders"
-  chosen="High-fidelity interactive prototype in ProtoPie — simulating hardware interaction timing (printer sound, scanner feedback, ticket-out animation) before a line of code was written."
+  chosen="High-fidelity Figma prototype simulating hardware interaction timing (scanner feedback, ticket-out animation, winning states) — serving both executive buy-in and as an interactive PRD for engineering."
   rejected="Low-fidelity wireframes or a traditional written specification document."
-  rationale="The executive stakeholders needed to feel the product to approve it. A spec document cannot convey whether the 200ms delay between tapping 'print' and hearing the printer feels satisfying or broken. The ProtoPie prototype closed that gap — and replaced a 40-page spec deck that would have generated weeks of back-and-forth."
+  rationale="Executives needed to feel the product to approve it. A spec document cannot convey whether a 200ms delay between tapping 'print' and seeing the animation feels right or broken. The Figma prototype closed that gap — replacing a 40-page spec deck and giving engineering an unambiguous interactive reference."
 />
 
 <DecisionRecord
@@ -102,9 +102,9 @@ What I chose NOT to solve: full feature parity with the Bally's mobile app. Repl
 
 The hardest constraint in this project wasn't the UI — it was that every screen decision had a physical hardware dependency, and every hardware dependency had a regulatory constraint.
 
-Working directly with Suzohapp, I co-authored the Product Requirement Documents that governed peripheral placement: scanners, bill acceptors, card readers, and the printer were repositioned for maximum reach accessibility across a wide range of player heights. ADA compliance and WCAG 2.1 alignment were designed in from the start, not retrofitted.
+Working closely with the PM, I incorporated ergonomic design principles and ADA compliance standards into the hardware design brief — then translated those physical decisions into software UI and UX that maximised the hardware's form for a seamless, ergonomic, and accessible product experience. ADA and WCAG 2.1 alignment were designed in from the start, not retrofitted.
 
-The internal peripheral layout was also redesigned based on direct feedback from casino operations teams — a change that significantly streamlined maintenance workflows and reduced daily terminal downtime.
+The result: peripheral placement, screen angles, and interaction zones that work for a wide range of player heights and physical abilities — with a software layer that feels native to the hardware rather than bolted on top of it.
 
 <ImagePair
   src1="/case-studies/bally-sbt/hardware-terminal.png"
@@ -157,15 +157,15 @@ A completely redesigned **dynamic welcome screen** allows sports or leagues to b
 
 ### 04 — Prototype as Strategic Tool
 
-I built two distinct prototype artefacts, each for a different audience:
+I'm a loud advocate for high-fidelity prototyping as a communication and risk-mitigation tool. I built a single Figma prototype that served two distinct audiences at once.
 
-**The Living Demo** — a full ProtoPie prototype of the player experience, hardware interactions and all, used to present the vision to executive stakeholders. It secured buy-in and budget approval without requiring a single line of production code.
+**For executives** — a fully interactive Living Demo of the player experience, used to present the product vision before a line of code was written. It secured buy-in and budget approval in a way no spec document could: stakeholders experienced the product rather than reading about it.
 
-**The Interactive PRD** — a Figma prototype linked to annotated specs, used with the Manchester engineering team. By simulating complex hardware interactions in the prototype, the team eliminated the largest source of ambiguity in the build phase: what the hardware feedback should look and feel like at each moment.
+**For engineering** — the same prototype doubled as an interactive PRD, with annotated specs linked directly to the flows. By simulating complex hardware interactions — scanner feedback, ticket-out animations, winning states — the team had a functional reference that eliminated ambiguity and reduced costly rework during the build phase.
 
 <YouTubeEmbed
   url="https://www.youtube.com/watch?v=sA1GKst94Ew"
-  caption="ProtoPie Living Demo — high-fidelity prototype simulating hardware interactions used for executive buy-in."
+  caption="Figma Living Demo — high-fidelity prototype simulating hardware interactions, used for executive buy-in and as an interactive PRD for engineering."
 />
 
 <FullImage
