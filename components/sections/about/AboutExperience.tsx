@@ -9,47 +9,36 @@ interface Job {
   achievement: string;
 }
 
-// One sentence per role — what you moved, shipped, or changed.
-// Draft copy for Seamax, CoinSeason, G6, Freelance — update with your own words.
 const JOBS: Job[] = [
   {
     company:     "Scientific Games",
     title:       "Senior UI/UX Designer",
-    years:       "2023 – 2025",
-    achievement: "Consolidated fragmented legacy design across a multi-product portfolio, established a shared component library and design system, and led the redesign of several multi-state omnichannel products.",
+    years:       "Apr 2023 – Nov 2025",
+    achievement: "Led the redesign of a complex lottery retail system across 11 states, migrating 6+ years of legacy assets into a component-based design system that reached ~95% adoption across products.",
   },
   {
-    company:     "Bally's Interactive",
+    company:     "Bally's Interactive (Bet.Works)",
     title:       "UX/UI Designer",
-    years:       "2021 – 2023",
-    achievement: "Designed the Sports Betting Terminal — a physical-digital touchpoint deployed across 19 resort properties — bridging Bally's mobile Ballyverse ecosystem with the casino floor.",
-  },
-  {
-    company:     "Seamax Marine and Outdoor",
-    title:       "E-Commerce Digital Designer",
-    years:       "2020 – 2021",
-    // TODO: replace with your own sentence
-    achievement: "Redesigned the digital shopping experience for a marine and outdoor products brand, improving product storytelling and purchase flow.",
+    years:       "Jan 2021 – Jan 2023",
+    achievement: "Owned end-to-end design of a sportsbook retail terminal deployed across 19 resort properties, reducing operational complexity by 30% for front-line staff.",
   },
   {
     company:     "CoinSeason Capital",
     title:       "UI/UX Designer",
-    years:       "2018 – 2020",
-    // TODO: replace with your own sentence
-    achievement: "Designed investment and portfolio management interfaces for a crypto-native capital platform, making complex financial data navigable for retail investors.",
+    years:       "May 2018 – May 2020",
+    achievement: "Founding designer — defined product direction and owned all UI/UX from zero to launch, contributing to 110% DAU growth within six months.",
   },
   {
-    company:     "G6 Idea Media",
+    company:     "G6 Idea Media Ltd.",
     title:       "Product Designer",
-    years:       "2016 – 2018",
-    // TODO: replace with your own sentence
-    achievement: "Shipped product design across multi-industry agency clients, building a broad foundation in visual systems, interaction patterns, and digital brand.",
+    years:       "Apr 2016 – Feb 2018",
+    achievement: "Delivered end-to-end wireframes, UI/UX designs, and functional prototypes for local business clients across campaign and web projects.",
   },
   {
-    company:     "Freelance",
-    title:       "UI/UX Designer",
-    years:       "2015 – 2021",
-    achievement: "Delivered end-to-end design for independent clients across web, mobile, and brand — running parallel to full-time roles for six years.",
+    company:     "Self-Employed",
+    title:       "Freelance Product Designer",
+    years:       "Jun 2015 – Present",
+    achievement: "Designed and launched a free-to-play NHL game that attracted 1M+ users during the 2023 Stanley Cup Playoffs, while building AI-native design workflows across client work.",
   },
 ];
 

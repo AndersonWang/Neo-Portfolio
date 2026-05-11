@@ -56,7 +56,7 @@ const LINKS: SocialLink[] = [
   {
     label:  "LinkedIn",
     handle: "Anderson Wang",
-    href:   "https://www.linkedin.com/in/andersonwang/", // TODO: confirm your handle
+    href:   "https://www.linkedin.com/in/andersonwangxz/",
     icon:   <LinkedInIcon size={28} />,
   },
   {
