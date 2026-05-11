@@ -1,0 +1,188 @@
+---
+title: Bally Moments
+description: Inventing a participation-first sports engagement layer for Bally Bet — a live micro-moments feature built at the intersection of broadcast, fantasy sports, and social gaming.
+year: 2022
+role: UX Designer
+timeline: 6 months
+company: Bally's Interactive
+specialty: design-process
+tags: [Live Products, Game Design, Sports Tech, Social Features, Design Systems]
+featured: true
+---
+
+<FullImage
+  src="/case-studies/bally-moments/hero-banner.png"
+  alt="Bally Moments — live sports participation feature for Bally Bet"
+/>
+
+<StatRow>
+  <Stat value="21"   label="Regional Sports Networks"  sublabel="Acquired via Sinclair — the broadcast infrastructure behind the product" />
+  <Stat value="60%"  label="App users"                 sublabel="Engaged with only 1–2 bet types — the engagement ceiling Moments was designed to break" />
+  <Stat value="3"    label="Interaction layers"         sublabel="Watch · Pick · Challenge Friends — from passive viewer to active participant" />
+</StatRow>
+
+---
+
+## The Acquisition Play
+
+In 2021, Bally's Corporation completed the acquisition of 21 Regional Sports Networks from Sinclair Broadcast Group — formerly the Fox Sports regional networks. The $4.4B deal wasn't just a media purchase. It was the foundational move in an ambitious vertical integration strategy Bally's called the **"Ballyverse"**: a single ecosystem where sports broadcasting, online betting, and land-based casino rewards would converge.
+
+The competitive logic was clear. DraftKings and FanDuel had built dominant sportsbooks, but they didn't own a single minute of live sports content. Bally's, by contrast, suddenly controlled the broadcast pipe *and* the betting product. If the company could design a seamless bridge between the two, it would have a structural moat that pure-play competitors couldn't cross.
+
+Bally Moments was designed to be that bridge.
+
+<Callout type="insight">
+This wasn't a feature request — it was a strategic mandate. The RSN acquisition only creates value if the product can turn sports viewers into engaged bettors. Moments was the mechanism that made the acquisition thesis real.
+</Callout>
+
+---
+
+## My Ownership
+
+<RoleMap roles={[
+  { name: "Anderson Wang",       role: "UX Designer",                   org: "Sports Product Studio — Vancouver" },
+  { name: "Manchester Studio",   role: "Product, Engineering & Design", org: "Bally's Interactive — UK"          },
+  { name: "The Librarian Group", role: "Design Systems Team",           org: "Bally's Interactive — Internal"    },
+]} />
+
+I was embedded in the Sports Product Studio in Vancouver, collaborating closely with the Manchester team who owned the Bally Bet app build. My responsibility spanned the end-to-end UX of the Moments feature: defining the participation model, designing the selection and live-state interfaces, shaping the social challenge mechanic, and working with the internal design systems team to extend the component library for the new module.
+
+---
+
+## Reframing the Problem
+
+The brief I received framed this as an engagement problem: users weren't going deep enough into the app. Internal analysis showed that more than 60% of Bally Bet users were engaging with only 1–2 bet types — a clear ceiling on time-in-app and lifetime value.
+
+The team's initial instinct was to solve this by adding more bet types or simplifying the existing sportsbook UI. But that framing was wrong.
+
+<Callout type="insight">
+The problem wasn't that betting was too complicated. The problem was that betting was too transactional. You placed a bet, then you waited. The product treated users as bettors. Sports fans don't think of themselves as bettors — they think of themselves as participants.
+</Callout>
+
+The insight came from thinking about what engagement actually looks like outside the app. At a stadium, in a pub, in a living room — thousands of people are *performing*. They're coaching from the couch, predicting the next play, reacting to every turnover like it was their own call. That's the kind of participation the app had no mechanism for.
+
+**What I chose NOT to build:** more bet types, a simplified parlay UI, or a traditional prop bet interface. Any of those would have produced a marginally better sportsbook — not a fundamentally different relationship with the sport.
+
+The reframe: don't make betting easier. **Create a new way to consume live sports.**
+
+---
+
+## Defining the Framework
+
+<DecisionRecord
+  label="Dynamic points vs. static odds"
+  chosen="A real-time point system where positive actions (sacks, yards, assists) add points and mistakes (turnovers, interceptions) subtract them — live, throughout the event window."
+  rejected="Pre-game static odds with a fixed payout structure, where the user's role ends at the moment of selection."
+  rationale="Static odds remove user agency the moment the bet is placed. A dynamic point system keeps the user emotionally invested for the entire duration of a drive, quarter, or half — which is the engagement loop the product needed. The score becomes a reflection of the game unfolding, not a waiting screen."
+/>
+
+<DecisionRecord
+  label="Fantasy sports UI vs. sportsbook UI"
+  chosen="A selection interface that feels like drafting a player for a fantasy team — card-based, visual, focused on the athlete and their current form."
+  rejected="A traditional sportsbook odds table with numeric lines, moneylines, and spread notation."
+  rationale="Sportsbook UI is a fluent language for experienced bettors. For casual fans — the growth segment Moments was targeting — it reads as a spreadsheet. Fantasy sports is a mental model millions of sports fans already have. Designing toward that vocabulary lowered the barrier to participation without dumbing down the product."
+/>
+
+<DecisionRecord
+  label="Micro-window selection vs. full-game picks"
+  chosen="Time-bounded participation windows — a single quarter, a single drive, a single at-bat — that reset and re-open throughout a game."
+  rejected="A single pre-game selection locked in for the full match duration."
+  rationale="Full-game picks create one entry point and one resolution. Micro-windows create multiple re-entry points per game — each one a new reason to open the app, make a pick, and watch it resolve. This is the engagement loop that drives session depth and return visits. It also reduces the perceived stakes for new users: a quarter is less intimidating than a full game."
+/>
+
+<DecisionRecord
+  label="Bridge Bally Bingo patterns vs. build a new interaction model"
+  chosen="Extend the familiar 'pick and watch it resolve' interaction model already established by Bally Bingo — a sports-themed card game in the same app — carrying forward the same card UI and result reveal patterns."
+  rejected="Designing Moments as a standalone product with its own distinct UX vocabulary, requiring users to learn new interaction patterns."
+  rationale="Bally Bingo had already trained a segment of Bally Bet users on the core mental model: select a prediction, watch the live event, see the result confirm or deny your pick. Moments is that same loop with real-time scoring and higher emotional stakes. Reusing the established UI language meant zero learning curve — the first Moments session felt familiar by design."
+/>
+
+---
+
+## Design Execution
+
+### Pre-Game — Selection State
+
+The entry point to Moments lives inside the live game view in Bally Bet. Before a window opens, users see the upcoming matchup framed as a player card grid — the same visual language as Bally Bingo, but now populated with real athletes and live performance data.
+
+The selection state was designed to feel like a fast, confident decision — not a calculated wager. Card-based layout, athlete photo, current form indicator, and a single tap to lock in a pick. No lines, no spreads, no terminology that signals "this is serious betting."
+
+<FullImage
+  src="/case-studies/bally-moments/selection-ui.png"
+  alt="Bally Moments selection interface — player card grid for pre-game pick"
+/>
+
+### Live State — The Real-Time Meter
+
+Once a window opens and the game is in progress, the interface shifts from selection to participation. A live scoring meter reflects the real-time performance of the user's pick — points accumulating with positive plays, dropping with mistakes.
+
+The design goal was to make the meter feel *physical* — like the score is happening to you, not just being reported. Micro-animations on each scoring event, colour shifts as momentum swings, and a persistent live bar at the bottom of the game view that's visible without leaving the broadcast feed.
+
+<FullImage
+  src="/case-studies/bally-moments/live-state.png"
+  alt="Bally Moments live state — real-time scoring meter during active game window"
+/>
+
+### The Social Layer — Challenge Friends
+
+The feature that separates Moments from every other sportsbook product: a **social challenge mechanic**.
+
+When a user locks in a pick, they can share that specific game event — the window, the pick, the live meter — directly to friends. Those friends can join the same window with their own pick and compete in real time. The shared event becomes a group experience: everyone watching the same drive, tracking different picks, reacting to the same plays.
+
+This was the "pub moment" made digital. Instead of shouting at the screen alone, you're in a live micro-competition with people who care about the same game.
+
+<FullImage
+  src="/case-studies/bally-moments/social-challenge.png"
+  alt="Bally Moments social challenge — sharing a live game event with friends to compete"
+/>
+
+### Design System — Extending for Moments
+
+Working with the internal "Librarian" design systems team, we expanded Bally Bet's component library to support the Moments module. The core additions: the **Player Pick card**, the **Live Meter**, and the **Event Window badge** — each built as modular, token-driven components.
+
+The modular architecture had a specific strategic purpose: the same components could be reskinned for different sports with minimal design debt. An NFL drive window and an NBA quarter window use identical component logic — only the iconography, team colours, and scoring events change. This meant a single design investment could scale across every sport in the Bally Bet RSN catalogue.
+
+<FullImage
+  src="/case-studies/bally-moments/design-system-components.png"
+  alt="Bally Moments design system — Player Pick card, Live Meter, and Event Window badge components"
+/>
+
+---
+
+## The Industry Bet
+
+Bally Moments was designed in 2022. In the years since, every major streaming platform has moved toward the same destination.
+
+**Netflix** explored interactive viewing formats and has been vocal about sports as its next major content investment — the interactive layer is the next logical step. **Apple** integrated betting prompts and live stats directly into MLS Season Pass broadcasts, blurring the line between watching and participating. **Amazon Prime** built Next Gen Stats overlays into Thursday Night Football — proto-engagement that stops just short of a pick mechanic. **ESPN Bet**, launched in 2023 as a joint venture with PENN Entertainment, is Disney's explicit bet that the broadcast-to-betting bridge is where the industry is heading.
+
+The common thread: every platform is trying to turn the passive viewer into an active participant. The interaction model is converging on exactly what Moments was designed to do.
+
+<Callout type="insight">
+What made Bally's position unique wasn't the feature — it was the infrastructure. DraftKings can build a pick mechanic. FanDuel can build a live meter. Neither of them can make the live feed and the betting product the same product, on the same screen, from the same company. The RSN acquisition was the moat. Moments was the drawbridge.
+</Callout>
+
+The broader industry thesis this project reinforced: **live sports is the last content format that can't be time-shifted**, which makes it the most valuable surface for real-time engagement products. The companies that own the broadcast relationship and the participation layer simultaneously will define the next decade of sports media monetization.
+
+---
+
+## Impact
+
+Bally Moments advanced to feature pipeline stage at Bally's Interactive before the product team transitioned. The framework established during this project — the participation model, the micro-window mechanic, and the social challenge layer — represented the most significant expansion of the Bally Bet engagement model beyond traditional sportsbook functionality.
+
+Within the Ballyverse strategy, Moments was positioned as the primary differentiator: the product that would convert RSN viewers into active Bally Bet users, and Bally Bet users into engaged, return-visit players. It shifted the product's identity from a betting utility to an **entertainment destination** — which was the explicit ambition behind the "Born to Entertain" brand mandate.
+
+The design system work — modular, sport-agnostic components — gave the Manchester engineering team a scalable foundation to extend Moments across every RSN sport in the catalogue without per-sport redesign cycles.
+
+---
+
+## Reflection
+
+The hardest design constraint in this project wasn't the interface — it was time. Live data has latency. A sack happens on screen, and the scoring event arrives 800–1200ms later. Design that assumes instantaneous feedback will feel broken in production. We had to design the live meter to feel *responsive* without overpromising — micro-animations that acknowledge a play is being processed, rather than immediately reflecting a score that hasn't confirmed yet.
+
+The broader lesson: designing for live data is a fundamentally different problem than designing for static or async data. The interface has to hold uncertainty gracefully.
+
+The other thing I'd do differently: prototype the social challenge mechanic earlier in the process with real users. We validated the core pick-and-watch loop through internal testing, but the social layer was spec'd more than it was tested. Friend-to-friend challenge mechanics have their own dynamics — invitation friction, competitive tone, group size — that are hard to design for without seeing real behaviour.
+
+What this project gave me that I've carried into every product since: the instinct to look at what an industry is doing with its most valuable asset — in this case, live sports — and ask whether the current design model is actually serving the audience, or just serving the business model that existed before the audience changed.
+
+In 2022, the answer was clearly the latter. Moments was a small attempt to close that gap. The giants are still catching up.
