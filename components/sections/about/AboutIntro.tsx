@@ -116,16 +116,6 @@ export default function AboutIntro() {
               &ldquo;Technologies evolve at lightning speed, but the human heart remains
               constant.&rdquo;
             </p>
-            <p style={{
-              fontFamily:    "var(--font-mono)",
-              fontSize:      "0.6875rem",
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              color:         "var(--text-muted)",
-              margin:        0,
-            }}>
-              Anderson Wang
-            </p>
           </motion.blockquote>
 
         </div>

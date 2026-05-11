@@ -3,44 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// ── LinkedIn inline SVG ────────────────────────────────────────────────────────
-// Matches the style of /public/icons: thick rounded strokes, outline-first, currentColor
-function LinkedInIcon({ size = 32 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 192 192"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Rounded square border */}
-      <rect
-        x="18" y="18" width="156" height="156" rx="34"
-        stroke="currentColor" strokeWidth="11" strokeLinejoin="round"
-      />
-      {/* i — dot */}
-      <circle cx="61" cy="63" r="8" fill="currentColor" />
-      {/* i — stem */}
-      <line
-        x1="61" y1="82" x2="61" y2="149"
-        stroke="currentColor" strokeWidth="11" strokeLinecap="round"
-      />
-      {/* n — left stem */}
-      <line
-        x1="84" y1="82" x2="84" y2="149"
-        stroke="currentColor" strokeWidth="11" strokeLinecap="round"
-      />
-      {/* n — arch + right stem */}
-      <path
-        d="M 84 101 C 84 78 133 78 133 101 L 133 149"
-        stroke="currentColor" strokeWidth="11"
-        strokeLinecap="round" strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 // ── Social link data ───────────────────────────────────────────────────────────
 // TODO: replace placeholder hrefs with your actual profile URLs
@@ -57,7 +19,15 @@ const LINKS: SocialLink[] = [
     label:  "LinkedIn",
     handle: "Anderson Wang",
     href:   "https://www.linkedin.com/in/andersonwangxz/",
-    icon:   <LinkedInIcon size={28} />,
+    icon:   (
+      <Image
+        src="/icons/linkedin.png"
+        alt=""
+        width={28}
+        height={28}
+        style={{ display: "block" }}
+      />
+    ),
   },
   {
     label:  "GitHub",
