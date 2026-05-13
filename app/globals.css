@@ -136,31 +136,44 @@
 }
 
 .dark {
-  --bg-page:    #0A0A0A;
-  --bg-surface: #1A1918;
-  --bg-raised:  #2E2C28;
-  --bg-overlay: rgba(250,248,244,0.12);
+  /* Backgrounds — warm dark, same neutral DNA as light theme */
+  --bg-page:    #100E0C;
+  --bg-surface: #1C1A18;
+  --bg-raised:  #272320;
+  --bg-overlay: rgba(250,248,244,0.14);
 
-  --text-primary:   #FAF8F4;
-  --text-secondary: #9A9690;
-  --text-muted:     #9A9690;  /* was #737068 (4.00:1 ❌) → now 6.73:1 ✅ WCAG AA */
-  --text-inverse:   #0F0E0D;
-  --text-on-accent: #0A0A0A;
+  /* Text — three distinct levels (secondary ≠ muted, both AA-passing) */
+  --text-primary:   #F0EDE8;  /* warm off-white — 16.5:1 on bg-page ✅ */
+  --text-secondary: #A8A49E;  /* warm mid-grey  —  7.8:1 on bg-page ✅ */
+  --text-muted:     #8A8480;  /* warm grey      —  5.6:1 on bg-page, 4.8:1 on bg-surface ✅ */
+  --text-inverse:   #100E0C;
+  --text-on-accent: #100E0C;
 
-  --border-default: rgba(250,248,244,0.06);
-  --border-strong:  rgba(250,248,244,0.38);  /* was 0.12 (low contrast ❌) → now ~3:1 ✅ */
+  /* Borders */
+  --border-default: rgba(250,248,244,0.07);
+  --border-strong:  rgba(250,248,244,0.40);
   --border-accent:  #8B6AFF;
 
-  --accent:        #8B6AFF;
+  /* Accent — dark text on purple button (white fails at 3.75:1 ❌) */
+  --accent:        #8B6AFF;  /* 5.1:1 on bg-page ✅ */
   --accent-hover:  #A080FF;
-  --accent-subtle: rgba(139,106,255,0.12);
-  --accent-on:     #0A0A0A;
+  --accent-subtle: rgba(139,106,255,0.14);
+  --accent-on:     #100E0C;
 
-  --status-error:   #EF4444;
-  --status-success: #22C55E;
-  --status-warning: #F59E0B;
-  --status-info:    #60A5FA;
-  --status-info-soft: rgba(96, 165, 250, 0.12);
+  /* Status — all confirmed AA on #100E0C */
+  --status-error:     #EF4444;  /* 5.3:1 ✅ */
+  --status-success:   #22C55E;  /* 8.8:1 ✅ */
+  --status-warning:   #F59E0B;  /* 9.2:1 ✅ */
+  --status-info:      #60A5FA;  /* 8.2:1 ✅ */
+  --status-info-soft: rgba(96,165,250,0.14);
+
+  /* Shadows — depth-first on dark surfaces */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.6), 0 4px 12px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 64px rgba(0,0,0,0.7), 0 8px 24px rgba(0,0,0,0.6);
+  --shadow-glow:    0 0 24px rgba(139,106,255,0.40);
+  --shadow-glow-sm: 0 0 10px rgba(139,106,255,0.30);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -273,6 +286,16 @@ html {
   line-height: 1.4;
   letter-spacing: -0.01em;
   color: var(--text-primary);
+}
+
+/* Azeret Mono — always medium weight site-wide.
+   The attribute selector catches every inline fontFamily: "var(--font-mono)" usage
+   without needing to touch individual component files. */
+[style*="--font-mono"],
+.type-meta,
+.type-eyebrow,
+.type-index {
+  font-weight: 500;
 }
 
 /* Meta / Eyebrow — Azeret Mono, uppercase, tracked */

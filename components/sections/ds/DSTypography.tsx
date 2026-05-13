@@ -77,7 +77,7 @@ export default function DSTypography() {
               <p style={{
                 fontFamily: semantic.typography.font[role],
                 fontSize: "2.25rem",
-                fontWeight: role === "display" ? 300 : role === "mono" ? 400 : 500,
+                fontWeight: role === "display" ? 300 : 500,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.1,
                 color: "var(--text-primary)",

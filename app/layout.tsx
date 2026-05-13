@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
+import ThemeProvider from "@/components/layout/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -38,16 +39,18 @@ export default function RootLayout({
         }}
         className="antialiased"
       >
-        <Nav />
+        <ThemeProvider>
+          <Nav />
 
-        {/* Push content below fixed nav */}
-        <div style={{ paddingTop: "64px", flex: 1, display: "flex", flexDirection: "column" }}>
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </div>
+          {/* Push content below fixed nav */}
+          <div style={{ paddingTop: "64px", flex: 1, display: "flex", flexDirection: "column" }}>
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </div>
 
-        <Footer />
+          <Footer />
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

@@ -28,6 +28,66 @@ interface ChangelogEntry {
 
 const ENTRIES: ChangelogEntry[] = [
   {
+    version: "1.3",
+    date:    "May 2026",
+    title:   "Dark Mode, Theme Toggle & Typography Refinement",
+    kind:    "token",
+    why:     "A full WCAG 2.1 AA audit revealed 13 issues — including a critical dark-token collapse where --text-secondary and --text-muted resolved to the same value. The dark theme was rebuilt from the ground up to mirror the warmth and hierarchy of the light system, with a user-controlled toggle added to the nav.",
+    summary: "Dark token system rebuilt with 3-level text hierarchy and warm neutrals. Sun/moon toggle added to nav. Azeret Mono promoted to w500 globally.",
+    changes: [
+      {
+        type:   "fix",
+        text:   "--text-secondary and --text-muted dark: both were #9A9690 — no hierarchy",
+        detail: "Now --text-secondary: #A8A49E (7.8:1) and --text-muted: #8A8480 (5.6:1 on bg-page, 4.8:1 on bg-surface). Three distinct, AA-passing levels restored.",
+      },
+      {
+        type:   "change",
+        text:   "--bg-page dark: #0A0A0A → #100E0C",
+        detail: "Neutral black replaced with a warm near-black consistent with the neutral-900 family. Carries the same editorial warmth as the light theme's #FAF8F4.",
+      },
+      {
+        type:   "change",
+        text:   "--text-primary dark: #FAF8F4 → #F0EDE8",
+        detail: "Warm off-white that mirrors the light theme's --bg-raised token — same family, opposite end of the scale. 16.5:1 on bg-page.",
+      },
+      {
+        type:   "change",
+        text:   "Dark shadows replaced with depth-first black values",
+        detail: "Light-mode amethyst-tinted shadows (4–12% opacity) don't read on dark surfaces. Replaced with rgba(0,0,0,0.4–0.7) layered shadows. Glow tokens increased to 0.35–0.40 opacity for visibility.",
+      },
+      {
+        type:   "add",
+        text:   "ThemeProvider — next-themes wrapper with class-based switching",
+        detail: "Wraps the root layout. Writes 'dark' class to <html>, defaults to light, no system-preference detection. Preference persists to localStorage.",
+      },
+      {
+        type:   "add",
+        text:   "Sun / moon toggle in nav bar",
+        detail: "Icon-only button (no text). Moon = switch to dark, Sun = switch to light. Uses mounted guard to prevent hydration flash. aria-label switches with state.",
+      },
+      {
+        type:   "add",
+        text:   "wordmark-dark.svg — warm white variant of the wordmark",
+        detail: "Dark nav needs a light wordmark. Same structure as wordmark.svg but fill #F0EDE8. Brand red dot (#E8432B) preserved — passes 5:1 on dark bg-page.",
+      },
+      {
+        type:   "add",
+        text:   "MatrixDrop — canvas-based matrix rain background component",
+        detail: "Chinese, Katakana, Latin, and number character streams with green gradient coloring and white head glow. Used in the home hero section. aria-hidden on the canvas element.",
+      },
+      {
+        type:   "change",
+        text:   "Azeret Mono: w400 → w500 globally",
+        detail: "Single CSS rule [style*='--font-mono'] { font-weight: 500 } covers all 30+ inline-style usages without touching individual components. monoMd and monoSm tokens in lib/tokens.ts updated to match.",
+      },
+      {
+        type:   "audit",
+        text:   "Full WCAG 2.1 AA audit: 13 issues identified across all 4 principles",
+        detail: "Critical: nav contrast over dark hero (1.5:1), no skip link, canvas not aria-hidden. Major: no focus-visible rings, mobile touch targets <44px, external links open tab without warning, no prefers-reduced-motion. Minor: decorative elements exposed to AT, missing aria-current, no aria-label on nav.",
+      },
+    ],
+  },
+  {
     version: "1.2",
     date:    "May 2026",
     title:   "WCAG 2.1 AA Audit & Remediation",

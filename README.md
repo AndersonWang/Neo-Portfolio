@@ -26,6 +26,7 @@ The workflow was less "AI writes the code" and more "designer specifies the syst
 | Analytics | Vercel Analytics | Privacy-friendly, zero config. |
 | Hosting | Vercel | Native Next.js deployment. Every push auto-deploys; every branch gets a preview URL for feedback. |
 | Language | TypeScript | The token system and component APIs are fully typed — enforces the design system contract at the editor level. |
+| Theming | next-themes | Class-based dark/light switching. Writes `dark` to `<html>`, persists to localStorage. No system-preference override — user choice is explicit. |
 
 ---
 
@@ -53,13 +54,15 @@ Neutrals are warm-tinted rather than clinical grey. This was a deliberate choice
 
 All semantic color tokens carry both a `light` and `dark` value. The `.dark` class on the root element switches the entire system in one step — no component-level color logic required.
 
+The dark theme is built to mirror the warmth of the light system — `#100E0C` instead of neutral `#000000`, `#F0EDE8` instead of pure white. All three text levels (`--text-primary`, `--text-secondary`, `--text-muted`) are distinct and AA-compliant in both modes. A sun/moon toggle in the nav lets users switch explicitly; preference persists via `localStorage`.
+
 ### Typography
 
 Three typefaces, each with a defined role:
 
 - **Roboto Serif** — display headlines, hero text, editorial pull quotes. The personality font: literary, unexpected.
 - **Satoshi** — all body copy, UI labels, navigation. Workhorse: clean, geometric, highly legible.
-- **Azeret Mono** — code, metadata, index numbers, timestamps. Signals precision and craft.
+- **Azeret Mono** — code, metadata, index numbers, timestamps. Signals precision and craft. Rendered at **w500 (medium)** globally — the regular weight was too thin at small sizes.
 
 The type scale uses `clamp()` for display and heading sizes — fully fluid, no breakpoint-based overrides needed.
 
@@ -95,9 +98,9 @@ app/
   contact/page.tsx      — Contact form (Resend API route)
 
 components/
-  layout/               — Nav, Footer, PageTransition, ReadingProgress
+  layout/               — Nav, Footer, PageTransition, ReadingProgress, ThemeProvider
   sections/             — Page-specific section components
-  ui/                   — Button, Card, Tag (design system primitives)
+  ui/                   — Button, Card, Tag, MatrixDrop (design system primitives)
 
 content/
   case-studies/         — MDX case study files
@@ -111,6 +114,19 @@ lib/
 ---
 
 ## Neo Design System Changelog
+
+### v1.3 — Dark Mode, Theme Toggle & Typography Refinement *(May 2026)*
+
+Dark token system rebuilt with a three-level text hierarchy and warm neutral backgrounds. Sun/moon nav toggle added via `next-themes`. Azeret Mono promoted to w500 globally. Full WCAG 2.1 AA audit completed — 13 issues identified and documented.
+
+**Key changes:**
+- `--text-secondary` and `--text-muted` dark tokens were identical (`#9A9690`) — now distinct: `#A8A49E` / `#8A8480`
+- `--bg-page` dark: `#0A0A0A` → `#100E0C` (warm near-black consistent with brand neutrals)
+- Added `ThemeProvider` (`next-themes`), sun/moon nav toggle, `wordmark-dark.svg`
+- Added `MatrixDrop` canvas component — matrix rain hero background
+- Azeret Mono: all usages promoted to w500 via single CSS attribute-selector rule + `tokens.ts` update
+
+---
 
 ### v1.2 — WCAG 2.1 AA Audit & Remediation *(May 2026)*
 
@@ -165,4 +181,4 @@ Neo Design System launched as the token foundation for the portfolio. The design
 
 ## Status
 
-Core infrastructure is complete and deployed. The design system page documents the full token system live. Case studies are being authored in MDX. Remaining work: custom cursor, smooth scroll, additional case study content.
+Core infrastructure is complete and deployed. The design system page documents the full token system live, including a live dark/light toggle. Case studies are being authored in MDX. Remaining work: WCAG fixes (skip link, focus rings, touch targets), additional case study content.

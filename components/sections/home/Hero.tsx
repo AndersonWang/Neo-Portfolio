@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
+import MatrixDrop from "@/components/ui/MatrixDrop";
 
 // ── Rotating text ───────────────────────────────────────────────────────────
 
@@ -65,17 +66,49 @@ const item = {
 
 export default function Hero() {
   return (
-    <section
-      className="page-gutter"
+    <div
+      className="dark"
       style={{
-        paddingTop:    "clamp(5rem, 12vw, 9rem)",
-        paddingBottom: "clamp(5rem, 10vw, 8rem)",
-        borderBottom:  "1px solid var(--border-default)",
-        maxWidth:      "1280px",
-        margin:        "0 auto",
-        width:         "100%",
+        position:        "relative",
+        overflow:        "hidden",
+        backgroundColor: "#0D0208",
+        borderBottom:    "1px solid var(--border-default)",
       }}
     >
+      {/* Matrix rain background */}
+      <MatrixDrop
+        backgroundColor="#0D0208"
+        canvasOpacity={0.75}
+        minSpeed={1.2}
+        maxSpeed={2.8}
+        minStreamLength={10}
+        maxStreamLength={28}
+      />
+
+      {/* Left-side legibility gradient */}
+      <div
+        aria-hidden
+        style={{
+          position:        "absolute",
+          inset:           0,
+          background:      "linear-gradient(to right, rgba(13,2,8,0.82) 0%, rgba(13,2,8,0.55) 55%, rgba(13,2,8,0.18) 100%)",
+          zIndex:          1,
+          pointerEvents:   "none",
+        }}
+      />
+
+      <section
+        className="page-gutter"
+        style={{
+          position:      "relative",
+          zIndex:        2,
+          paddingTop:    "clamp(5rem, 12vw, 9rem)",
+          paddingBottom: "clamp(5rem, 10vw, 8rem)",
+          maxWidth:      "1280px",
+          margin:        "0 auto",
+          width:         "100%",
+        }}
+      >
       <motion.div variants={container} initial="hidden" animate="show">
 
         {/* Availability badge */}
@@ -181,6 +214,7 @@ export default function Hero() {
         </motion.div>
 
       </motion.div>
-    </section>
+      </section>
+    </div>
   );
 }

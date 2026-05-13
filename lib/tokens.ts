@@ -209,8 +209,8 @@ export const semantic = {
       labelSm:    { size: '0.6875rem',weight: 600, leading: 1.4,  tracking: '0.08em', font: 'body' },
 
       // Mono — code, metadata, index numbers
-      monoMd:     { size: '0.875rem', weight: 400, leading: 1.7,  tracking: '0',      font: 'mono' },
-      monoSm:     { size: '0.75rem',  weight: 400, leading: 1.6,  tracking: '0',      font: 'mono' },
+      monoMd:     { size: '0.875rem', weight: 500, leading: 1.7,  tracking: '0',      font: 'mono' },
+      monoSm:     { size: '0.75rem',  weight: 500, leading: 1.6,  tracking: '0',      font: 'mono' },
 
       // Editorial — pull quotes, callouts (display font at body scale)
       quoteLg:    { size: 'clamp(1.25rem, 2.5vw, 2rem)', weight: 300, leading: 1.4, tracking: '-0.01em', font: 'display' },
