@@ -28,6 +28,21 @@ interface ChangelogEntry {
 
 const ENTRIES: ChangelogEntry[] = [
   {
+    version: "1.3.1",
+    date:    "May 2026",
+    title:   "System Preference Theme Detection",
+    kind:    "feature",
+    why:     "First-visit experience was fixed to light mode regardless of the user's OS setting. Dark-mode users had to manually toggle every visit — a friction point that conflicted with respecting user preferences.",
+    summary: "ThemeProvider now reads prefers-color-scheme on first visit. Manual toggle still overrides and persists to localStorage.",
+    changes: [
+      {
+        type:   "change",
+        text:   "ThemeProvider: defaultTheme 'light' → 'system', enableSystem false → true",
+        detail: "First-time visitors now land in the theme that matches their OS. Returning visitors with a saved localStorage preference are unaffected.",
+      },
+    ],
+  },
+  {
     version: "1.3",
     date:    "May 2026",
     title:   "Dark Mode, Theme Toggle & Typography Refinement",
@@ -58,7 +73,7 @@ const ENTRIES: ChangelogEntry[] = [
       {
         type:   "add",
         text:   "ThemeProvider — next-themes wrapper with class-based switching",
-        detail: "Wraps the root layout. Writes 'dark' class to <html>, defaults to light, no system-preference detection. Preference persists to localStorage.",
+        detail: "Wraps the root layout. Writes 'dark' class to <html>. Defaults to light on initial release; upgraded to system-preference detection in v1.3.1. Preference persists to localStorage.",
       },
       {
         type:   "add",

@@ -54,7 +54,7 @@ Neutrals are warm-tinted rather than clinical grey. This was a deliberate choice
 
 All semantic color tokens carry both a `light` and `dark` value. The `.dark` class on the root element switches the entire system in one step — no component-level color logic required.
 
-The dark theme is built to mirror the warmth of the light system — `#100E0C` instead of neutral `#000000`, `#F0EDE8` instead of pure white. All three text levels (`--text-primary`, `--text-secondary`, `--text-muted`) are distinct and AA-compliant in both modes. A sun/moon toggle in the nav lets users switch explicitly; preference persists via `localStorage`.
+The dark theme is built to mirror the warmth of the light system — `#100E0C` instead of neutral `#000000`, `#F0EDE8` instead of pure white. All three text levels (`--text-primary`, `--text-secondary`, `--text-muted`) are distinct and AA-compliant in both modes. A sun/moon toggle in the nav lets users switch explicitly; preference persists via `localStorage`. On first visit, the theme defaults to the user's OS/system preference (`prefers-color-scheme`) — dark-mode OS users land in dark mode automatically.
 
 ### Typography
 
@@ -114,6 +114,12 @@ lib/
 ---
 
 ## Neo Design System Changelog
+
+### v1.3.1 — System Preference Theme Detection *(May 2026)*
+
+ThemeProvider updated to respect `prefers-color-scheme` on first visit. `defaultTheme` changed from `"light"` to `"system"`, `enableSystem` set to `true`. User's manual toggle still overrides and persists to `localStorage`. No visual change — purely a first-visit default improvement.
+
+---
 
 ### v1.3 — Dark Mode, Theme Toggle & Typography Refinement *(May 2026)*
 
