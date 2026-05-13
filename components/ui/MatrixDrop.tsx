@@ -38,7 +38,7 @@ export default function MatrixDrop({
 }: MatrixDropProps) {
   const canvasRef    = useRef<HTMLCanvasElement>(null);
   const columnsRef   = useRef<Column[]>([]);
-  const animIdRef    = useRef<number>();
+  const animIdRef    = useRef<number | undefined>(undefined);
   const cellSize     = 20;
 
   const getRandomChar = () => ALL_CHARS[Math.floor(Math.random() * ALL_CHARS.length)];
