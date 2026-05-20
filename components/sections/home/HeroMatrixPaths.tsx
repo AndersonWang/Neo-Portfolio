@@ -205,12 +205,13 @@ export default function HeroMatrixPaths() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem" }}>
 
           {/* Pill row */}
-          <div style={{ display: "flex", gap: "1.25rem" }}>
+          <div style={{ display: "flex", gap: "1.25rem", maxWidth: "520px", width: "100%" }}>
             <button
               onMouseEnter={() => setHovered("past")}
               onMouseLeave={() => setHovered(null)}
               onClick={() => handleNavigate("past")}
               style={{
+                flex:         1,
                 padding:      "0.9rem 2.4rem",
                 borderRadius: "100px",
                 fontSize:     "1rem",
@@ -241,6 +242,7 @@ export default function HeroMatrixPaths() {
               onMouseLeave={() => setHovered(null)}
               onClick={() => handleNavigate("future")}
               style={{
+                flex:         1,
                 padding:      "0.9rem 2.4rem",
                 borderRadius: "100px",
                 fontSize:     "1rem",
